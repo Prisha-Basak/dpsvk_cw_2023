@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px 14px;
+    height: 100%;
+    width: 70px;
+    background: rgba(30, 30, 30, 1);
+    transition: all 0.5s ease;
+}
+
+.sidebar.active{
+    width: 240px;
+}
+
+.sidebar .logo_content .logo img{
+    width: 35px;
+}
+
+.sidebar .logo_content .logo{
+    display: flex;
+    height: 80px;
+    padding-bottom: 30px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo{
+    pointer-events: none;
+    opacity: 1;
+}
+
+.logo_content .logo .img{
+    margin-right: 5px;
+}
+
+.logo_content .logo .logo_name{
+    font-size: 25px;
+    font-weight: 400;
+    color: white;
+    padding-left: 20px;
+    padding-right: 27px;
+
+}
+
+.hamburger, .bar{
+    position: fixed;
+}
+
+.hamburger{
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 32px;
+    left: 30%;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: 0;
+    background: 0 0;
+}
+
+.sidebar.active .hamburger{
+    left: 80%;
+}
+
+.bar{
+    top: 3px;
+    background: white;
+    width: 100%;
+    height: 4px;
+    transition: all 0.3s ease-in;
+}
+
+#bar2{
+    top: 11px;
+}
+
+#bar3{
+    top: 19px;
+}
+
+.sidebar.active .hamburger #bar1{
+    background-color: white;
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+.sidebar.active .hamburger #bar2{
+    background-color: transparent;
+}
+
+.sidebar.active .hamburger #bar3{
+    background-color: white;
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+.hover-underline-animation {
+    position: relative;
+    color: rgb(223, 213, 204);
+    text-decoration: none;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(223, 213, 204);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    transform: scaleX(0);
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.sidebar.active .sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 20px 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li a{
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+.sidebar.after ul li .active, a:hover{
+    height: 40px;
+    background: rgba(151, 90, 172, 1);
+    color: white;
+}
+
+.sidebar ul li .active, a:hover{
+    height: 40px;
+    background: rgba(151, 90, 172, 1);
+    color: white;
+}
+
+.sidebar ul li a i{
+    min-width: 40px;
+    border-radius: 12px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.sidebar .link_name{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .link_name{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .profile_content{
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .profile_content .profile{
+    cursor: pointer;
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background:rgb(52, 51, 51);
+}
+
+.sidebar .profile_content .profile:hover{
+    background: rgba(151, 90, 172, 1);
+}
+
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile .profile_details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.profile .profile_details .name_job{
+    margin-left: 10px;
+}
+
+.profile .profile_details .name{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profile .profile_details .job{
+    font-size: 12px;
+}
+
+.profile #log_out{
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.sidebar.active .profile #log_out{
+    left: 88%;
+}
+
+.firstSection{
+    position: absolute;
+    height: 100vh;
+    width: calc(100% - 70px);
+    left: 70px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .firstSection{
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+.background{
+    background: rgba(0, 0, 0, 0.8) url('/poster.png');
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.text-big{
+    padding-top: 100px;
+    color: white;
+    font-family: 'Agoka Family';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-size: 185px;
+}
+
+.text-small{
+    font-family: 'Helvetica Now Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 52px;
+    color: white;
+    text-align: center;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.btn{
+    height: 50px;
+    width: 130px;
+    margin: 8px 15px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    font-size: 15px;
+    background: none;
+    color: lightgray;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.32s;
+}
+
+.btn:hover{
+    border: 1px solid white;
+    color: white;
+    opacity: 1;
+}
+
+
+
+
+
+
