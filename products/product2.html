@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Codewars</title>
+        <link rel="stylesheet" href="/products/product.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <img src="/images/mainlogo.png">
+                <div class="logo_name">Mystique</div>
+            </div>
+            <div class="navbar">
+                <button class="hamburger" id="hamburger">
+                    <div id="bar1" class="bar"></div>
+                    <div id="bar2" class="bar"></div>
+                    <div id="bar3" class="bar"></div>
+                </button>
+            </div>
+        </div>
+        <ul class="nav_list">
+            <li class="hover-underline-animation">
+                <a href="/main/main.html">
+                    <i class='bx bx-home-smile' ></i>
+                    <span class="link_name">Home</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav_list">
+            <li class="hover-underline-animation">
+                <a href="/shop/shop.html">
+                    <i class='bx bx-shopping-bag' ></i>
+                    <span class="link_name">Shop</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav_list">
+            <li class="hover-underline-animation">
+                <a href="###">
+                    <i class='bx bx-chat' ></i>
+                    <span class="link_name">Chat</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav_list">
+            <li class="hover-underline-animation">
+                <a href="/analytics/first.html">
+                    <i class='bx bx-bar-chart-square' ></i>
+                    <span class="link_name">Analytics</span>
+                </a>
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img src="/images/profile.png">
+                    <div class="name_job" onclick="window.location.href='####'">
+                        <div class="name">Arnav Verma</div>
+                        <div class="job">Graphic Designer</div>
+                    </div>
+                </div>
+                <i class="bx bx-log-out" id="log_out"></i>
+            </div>
+        </div>
+    </div>
+    
+    <section id="prodetails" class="product">
+        <div class="single-pro-details">
+            <button class="btn" onclick="window.location.href='/shop/shop.html'"><i class="bx bx-arrow-back"></i></button>
+            <h4 class="product-title">Pikachu Plushie Camera</h4>
+            <span>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                <li>Very Good Product</li>
+                <li>Ekdum Nice Nice</li>
+                <li>Pls Lelo Yaar</li>
+            </span>
+            <button class="button" onclick="window.location.href='###'">Buy Now</button>
+        </div>
+        <div class="single-pro-image">
+            <div class="proname"><h6>Sky Camera</h6></div>
+            <model-viewer src="/product1.gltf" shadow-intensity="1" auto-rotate camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+    </section>
+
+    <script src="/main/main.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</body>
+</html>
